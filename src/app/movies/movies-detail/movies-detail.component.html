@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="movie.imagePath" 
+      alt=" {{ movie.title }} " 
+      class="img-responsive"
+      style="max-height: 500px">
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-warning">Edit</button>
+    <button type="button" 
+      class="btn btn-danger"
+      (click)="deleteMovie(movie._id)">Delete</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ movie.title }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+  <b>Resume</b>  <p>{{ movie.resume }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <b>Format: </b>  <p>{{ movie.format }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <b>Country: </b>  <p>{{ movie.country }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <b>Duration:</b>  <p>{{ movie.duration }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <b>Characters:</b>
+    <ul class="list-group"
+     *ngFor = "let actor of movie.characters">
+      <li class="list-group-item">{{actor}}</li>
+    </ul>
+  </div>
+</div>

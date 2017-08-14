@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-5">
+    <!-- <app-movies-list 
+    (movieWasSelected) = "movieSelected = $event"></app-movies-list> -->
+    <app-movies-list 
+    (movieWasSelected) = "selectedMovie($event)"></app-movies-list>
+  </div>
+   <div class="col-md-7">
+    <app-movies-detail
+      *ngIf="movieSelected; else infoText"
+      [movie] = "movieSelected"></app-movies-detail>
+      <ng-template #infoText>
+        <p>Please select a Movie!</p>
+      </ng-template>
+  </div>
+</div>
+

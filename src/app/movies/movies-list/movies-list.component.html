@@ -1,0 +1,6 @@
+<div class="col-xs-12">
+  <app-movie-item 
+    *ngFor="let movieEl of moviesList"
+      [movie] = "movieEl"
+      (movieSelected)="onMovieSelected(movieEl)"></app-movie-item>
+</div>

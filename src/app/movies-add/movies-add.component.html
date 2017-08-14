@@ -1,0 +1,65 @@
+<form>
+  <div class="form-group">
+    <label for="name">Movies Name</label>
+    <input type="text" 
+      class="form-control" 
+      id="name" placeholder="Movie Name"
+      #title>
+  </div>
+  <div class="form-group">
+    <label for="format">Format</label>
+    <input type="text" 
+      class="form-control" 
+      id="format" placeholder="Format"
+      #format>
+  </div>
+  <div class="form-group">
+    <label for="format">Country</label>
+    <input type="text" 
+      class="form-control" 
+      id="country" placeholder="Country"
+      #country>
+  </div>
+  <div class="form-group">
+    <label for="duration">Duration</label>
+    <input type="number" 
+      class="form-control" 
+      id="duration" placeholder="Duration"
+      #duration>
+  </div>
+  <div class="form-group">
+    <label for="characters">Characters:</label>
+    <input type="text"
+      class="form-control"
+      id="characters" placeholder="Add Character"
+      #character>
+    <button type="button"
+     class="btn btn-primary"
+     (click)="addCharacter(character)">Add Character</button>
+     <ul *ngFor="let characterEl of charactersArray">
+        <li>{{ characterEl }}</li>
+     </ul>
+  </div>
+  <div class="form-group">
+    <label for="format">Image URL</label>
+    <input type="text" 
+      class="form-control" 
+      id="imagePath" placeholder="Image URL"
+      #imageURL>
+  </div>
+  <div class="form-group">
+    <label for="desc">Resume</label>
+    <textarea class="form-control" 
+      name="resume" 
+      id="resume" 
+      rows="5" 
+      placeholder="Enter resume"
+      #resume></textarea>
+    <!-- <input type="text" 
+      class="form-control" 
+      id="desc" placeholder="Description"> -->
+  </div>
+  <button type="submit" 
+    class="btn btn-primary"
+    (click) = "addNewmovie(title, format, country, duration, imageURL, resume)">Agregar</button>
+</form>
